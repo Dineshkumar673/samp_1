@@ -19,6 +19,7 @@ for i in os.listdir('/mnt/fs/Splitted_data/test/'):
         #print(len(flattened_val))
         x.append(flattened_val)
         y.append(i)
+        print("In Progress")
 print("$$$Done with Appending test values$$$")   
 
 
