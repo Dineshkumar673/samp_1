@@ -36,7 +36,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 
 print("$$$Fitting Random Forest Model$$$")
-rf = RandomForestClassifier()
+rf = RandomForestClassifier(max_depth=2, random_state=0)
 rf.fit(X_train,Y_train)
 print("$$$RANDOM FOREST ALGORITHM COMPLETED$$$")
 
