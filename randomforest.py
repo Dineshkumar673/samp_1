@@ -44,6 +44,6 @@ print("$$$RANDOM FOREST ALGORITHM COMPLETED$$$")
 
 print("$$$Dumping Model$$$")
 import pickle
-with open('randomforest.pkl', 'wb') as f:
+with open('/mnt/fs/Splitted_data/randomforest.pkl', 'wb') as f:
     pickle.dump(rf, f)
 print("$$$Script Done$$$")
