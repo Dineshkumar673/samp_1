@@ -37,7 +37,7 @@ print("$$$Test values Converted to array$$$")
 
 print("$$$Script started$$$")
 import pickle 
-pickled_model = pickle.load(open('/mnt/fs/Splitted_data/samp_1/randomforest.pkl', 'rb'))
+pickled_model = pickle.load(open('/mnt/fs/Splitted_data/randomforest.pkl', 'rb'))
 print("$$$Model loaded$$$")
 pred = pickled_model.predict(X_test)
 print("$$$Measuring Accuracy of randomforest$$$")
