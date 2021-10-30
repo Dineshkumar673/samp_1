@@ -60,9 +60,9 @@ for i in range (0,len(directory_contents)):
             
             if pose_landmarks is not None:
                 left_shoulder_x =0
-                left_shoulder_x =0
+                left_shoulder_y =0
                 right_shoulder_x=0
-                right_shoulder_x=0
+                right_shoulder_y=0
                 left_elbow_x =0
                 left_elbow_y =0
                 right_elbow_x =0
