@@ -19,7 +19,7 @@ from mediapipe.python.solutions import pose as mp_pose
 
 
 import os
-path = '/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/segmented_dataset/Arya_chudidhar_augs_0002/'
+path = '/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/segmented_dataset/Arya_chudidhar_augs_0003/'
 #The immediate file path
 
 directory_contents = os.listdir(path)
