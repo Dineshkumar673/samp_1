@@ -6,12 +6,12 @@
 
 import os
 import shutil
-dir_name='/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/segmented_dataset/Aryan_augs_0002/'
+dir_name='/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/segmented_dataset/Ayala_augs_0000/'
 dir_val=os.listdir(dir_name)
 #print(dir_val)
 classes_dir = ['address-31','after-30', 'afternoon-36', 'age-36',  'any-35',
-                   'baby-34', 'brother-35', 'birthday-34','eat-34']    
-dest='/mnt/fs/Splitted_data/Aryan_0002'
+                   'baby-34', 'brother-35', 'birthday-34','sister-28']    
+dest='/mnt/fs/Splitted_data/Ayala_0000'
 for i in dir_val:
     os.mkdir(dest+'/'+i+'/')
     for j in classes_dir:
