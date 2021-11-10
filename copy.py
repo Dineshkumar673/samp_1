@@ -10,7 +10,7 @@ dir_name='/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_ba
 dir_val=os.listdir(dir_name)
 #print(dir_val)
 classes_dir = ['address-31','after-30', 'afternoon-36', 'age-36',  'any-35',
-                   'baby-34', 'brother-35', 'birthday-34','eat-34', 'sister-28']    
+                   'baby-34', 'brother-35', 'birthday-34','eat-34', 'but30']    
 dest='/mnt/fs/Splitted_data/Aryan_0000'
 for i in dir_val:
     os.mkdir(dest+'/'+i+'/')
