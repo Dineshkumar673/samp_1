@@ -9,7 +9,7 @@ import shutil
 dir_name='/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/segmented_dataset/Arya_chudidhar_augs_0003/'
 dir_val=os.listdir(dir_name)
 #print(dir_val)
-classes_dir = ['after-30', 'afternoon-36', 'age-36',  'any-35',
+classes_dir = ['bring-23', 'afternoon-36', 'age-36',  'any-35',
                    'baby-34', 'brother-35', 'birthday-34','eat-34', 'sorry-31','sister-28']    
 dest='/mnt/fs/Splitted_data/Arya_chudidhar_0003'
 for i in dir_val:
