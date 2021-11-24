@@ -57,7 +57,7 @@ for i in range (0,len(directory_contents)):
             with mp_hands.Hands(static_image_mode=True,max_num_hands=2,min_detection_confidence=0.2) as hands:
                 hand_result = hands.process(image=input_frame)
                 hand_landmarks = hand_result.multi_hand_landmarks
-            
+                multi_handedness = hand_result.multi_handedness
             #input_frame = cv2.flip(input_frame,1)
 
             
@@ -232,7 +232,7 @@ for i in range (0,len(directory_contents)):
                     pinky_tip_x = hand_landmark.landmark[20].x
                     pinky_tip_y = hand_landmark.landmark[20].y
                     len_hands=(0 if (multi_handedness) is None else len(multi_handedness))
-            top_list.append([img,directory_contents[i], class_name[j],len_hands])
+            top_list.append([img,directory_contents[i],class_name[j],img_name[k],len_hands])
             with open('/mnt/fs/Splitted_data/samp_1/arya_suit_hands_00.csv', 'a',newline='') as f:
 
                 lst = np.array(top_list)
