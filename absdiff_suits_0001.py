@@ -12,8 +12,8 @@ import os
 import shutil
 import sys
 import time
-segments_dir = "D:/augs_data/Arya_chudidhar_0000/Arya_chudidhar_0000"
-absdiff_dir = "D:/absdiff/arya_chudi_0000"
+segments_dir = '/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/segmented_dataset/Arya_suit_augs_0001/'
+absdiff_dir = '/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Absdiff/Arya_suit_0001/'
 percentage = 0
 prev_inf_time = 0
 img_nm = 0
@@ -76,7 +76,7 @@ for Aug_dir in Seg_dir_lst:
         Var_nmber += 1
 avg_inf_time = avg_inf_time / img_nm
 print(avg_inf_time)
-print("Done with absdiff creation")
+print("Done with absdiff creation of Arya_suit_0001")
 
     ####### DONE ###############################################################################################
 
