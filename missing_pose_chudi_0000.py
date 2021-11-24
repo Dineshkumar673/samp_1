@@ -232,7 +232,7 @@ for i in range (0,len(directory_contents)):
                     pinky_tip_x = hand_landmark.landmark[20].x
                     pinky_tip_y = hand_landmark.landmark[20].y
                     len_hands=(0 if (multi_handedness) is None else len(multi_handedness))
-            top_list.append([img,directory_contents[i], class_name[j],len_hands])
+            top_list.append([directory_contents[i], class_name[j],img,len_hands])
             with open('/mnt/fs/Splitted_data/samp_1/chudi_hands_00.csv', 'a',newline='') as f:
 
                 lst = np.array(top_list)
