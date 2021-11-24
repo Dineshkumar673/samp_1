@@ -32,6 +32,7 @@ dest='/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_d
 
 #original code
 count=0
+top_list=[]
 for i in range (0,len(directory_contents)):
     #os.path.join(path,directory_contents[i])
     class_name = os.listdir(path+'/'+directory_contents[i]+'/')
@@ -45,7 +46,7 @@ for i in range (0,len(directory_contents)):
         
         #print(img_name)
         for k in range (0,len(img_name)):
-            top_list=[]
+            
             img=(path+'/'+directory_contents[i]+'/'+class_name[j]+'/'+img_name[k])
             input_frame = cv2.imread(img)
             input_frame = cv2.cvtColor(input_frame, cv2.COLOR_BGR2RGB)
