@@ -233,12 +233,9 @@ for i in range (0,len(directory_contents)):
                     pinky_tip_y = hand_landmark.landmark[20].y
                     len_hands=(0 if (multi_handedness) is None else len(multi_handedness))
             top_list.append([img,directory_contents[i],class_name[j],img_name[k],len_hands])
-            with open('/mnt/fs/Splitted_data/samp_1/arya_suit_hands_00.csv', 'a',newline='') as f:
-
-                lst = np.array(top_list)
-                lst=lst.ravel()
-                writer_obj = writer(f, delimiter = ',')
-                writer_obj.writerow(lst)
-                f.close()   
+print(top_list[0])
+output_df=pd.DataFrame(top_list,columns=['path','Aug','class_name','Misssing_image','No_of_hands']) 
+print(output_df.head())
+output_df.to_csv('/mnt/fs/Splitted_data/samp_1/suit_hand_0001.csv', index=False)            
 print("$$$Done With Arya_suit_0001")
 
