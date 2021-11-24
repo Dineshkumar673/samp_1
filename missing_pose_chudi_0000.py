@@ -19,12 +19,12 @@ from mediapipe.python.solutions import hands as mp_hands
 # In[ ]:
 
 
-path = '/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/segmented_dataset/Aryan_augs_0000/'
+path = '/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/segmented_dataset/Arya_chudidhar_augs_0000/'
 #The immediate file path
 
 directory_contents = os.listdir(path)
 print(directory_contents)
-dest='/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/Aryan_missing/Aryan_0000/'
+dest='/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/Arya_chudi_missingpose/Arya_chudi_0000/'
 
 
 # In[ ]:
@@ -45,7 +45,7 @@ for i in range (0,len(directory_contents)):
         
         #print(img_name)
         for k in range (0,len(img_name)):
-            
+            top_list=[]
             img=(path+'/'+directory_contents[i]+'/'+class_name[j]+'/'+img_name[k])
             input_frame = cv2.imread(img)
             input_frame = cv2.cvtColor(input_frame, cv2.COLOR_BGR2RGB)
@@ -57,7 +57,7 @@ for i in range (0,len(directory_contents)):
             with mp_hands.Hands(static_image_mode=True,max_num_hands=2,min_detection_confidence=0.2) as hands:
                 hand_result = hands.process(image=input_frame)
                 hand_landmarks = hand_result.multi_hand_landmarks
-            
+                multi_handedness = hand_result.multi_handedness
             #input_frame = cv2.flip(input_frame,1)
 
             
@@ -83,6 +83,9 @@ for i in range (0,len(directory_contents)):
                 left_thumb_y =0
                 right_thumb_x =0
                 right_thumb_y =0
+                success=shutil.copy(path+'/'+directory_contents[i]+'/'+class_name[j]+'/'+img_name[k],dest+'/'+ directory_contents[i]+'/'+class_name[j])
+                count +=1
+                print(count)
                 #top_list.append(['dinnu' for value_0 in range(0,26) ])
                
             else:                 
@@ -166,12 +169,10 @@ for i in range (0,len(directory_contents)):
                 pinky_finger_dip_y=0
                 pinky_finger_tip_x=0
                 pinky_finger_tip_y=0
-                
+                len_hands=(0 if (multi_handedness) is None else len(multi_handedness))
                     #top_list.append(['dinnu' for value_0 in range(27,110) ])
                         #hand_path.append([img,hand_result.multi_handedness])
-                success=shutil.copy(path+'/'+directory_contents[i]+'/'+class_name[j]+'/'+img_name[k],dest+'/'+ directory_contents[i]+'/'+class_name[j])
-                count +=1
-                print(count)
+                
                 
                         #hand_path.append([img,hand_result.multi_handedness])
                         
@@ -230,6 +231,14 @@ for i in range (0,len(directory_contents)):
                     pinky_dip_y = hand_landmark.landmark[19].y
                     pinky_tip_x = hand_landmark.landmark[20].x
                     pinky_tip_y = hand_landmark.landmark[20].y
-                    
-print("$$$Done With Aryan_0000")
+                    len_hands=(0 if (multi_handedness) is None else len(multi_handedness))
+            top_list.append([img,directory_contents[i], class_name[j],len_hands])
+            with open('/mnt/fs/Splitted_data/samp_1/chudi_hands_00.csv', 'a',newline='') as f:
+
+                lst = np.array(top_list)
+                lst=lst.ravel()
+                writer_obj = writer(f, delimiter = ',')
+                writer_obj.writerow(lst)
+                f.close()
+print("$$$Done With Arya_chudi_0000")
 
