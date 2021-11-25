@@ -239,6 +239,6 @@ print(top_list[0])
 output_df=pd.DataFrame(top_list,columns=['path','Aug','class_name','Misssing_image','No_of_hands']) 
 
 print(output_df.head())
-output_df.to_csv('/mnt/fs/Splitted_data/samp_1/aryan_hand_0002.csv', index=False)                
+output_df.to_csv('/mnt/fs/Splitted_data/samp_1/aryan_hand_0004.csv', index=False)                
 print("$$$Done With Aryan_0004")
 
