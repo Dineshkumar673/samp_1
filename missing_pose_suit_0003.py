@@ -19,12 +19,12 @@ from mediapipe.python.solutions import hands as mp_hands
 # In[ ]:
 
 
-path = '/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/segmented_dataset/Arya_suit_augs_0001/'
+path = '/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/segmented_dataset/Arya_suit_augs_0003/'
 #The immediate file path
 
 directory_contents = os.listdir(path)
 print(directory_contents)
-dest='/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/Arya_suit_missingpose/Arya_suit_0001/'
+dest='/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/Arya_suit_missingpose/Arya_suit_0003/'
 
 
 # In[ ]:
@@ -237,6 +237,6 @@ for i in range (0,len(directory_contents)):
 print(top_list[0])
 output_df=pd.DataFrame(top_list,columns=['path','Aug','class_name','Misssing_image','No_of_hands']) 
 print(output_df.head())
-output_df.to_csv('/mnt/fs/Splitted_data/samp_1/suit_hand_0001.csv', index=False)            
-print("$$$Done With Arya_suit_0001")
+output_df.to_csv('/mnt/fs/Splitted_data/samp_1/suit_hand_0003.csv', index=False)            
+print("$$$Done With Arya_suit_0003")
 
