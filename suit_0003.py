@@ -19,12 +19,12 @@ from mediapipe.python.solutions import hands as mp_hands
 # In[ ]:
 
 
-path = '/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/segmented_dataset/Arya_suit_augs_0001/'
+path = '/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/segmented_dataset/Arya_suit_augs_0003/'
 #The immediate file path
 
 directory_contents = os.listdir(path)
 print(directory_contents)
-dest='/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/Arya_suit_missing/Arya_suit_0001/'
+dest='/mnt/fs/Synthetic_dataset_creation/Absdiff_dataset/Datasets/Absdiff_base_dir/Arya_suit_missing/Arya_suit_0003/'
 
 
 # In[ ]:
@@ -231,5 +231,5 @@ for i in range (0,len(directory_contents)):
                     pinky_tip_x = hand_landmark.landmark[20].x
                     pinky_tip_y = hand_landmark.landmark[20].y
                     
-print("$$$Done With Arya_suit_0001")
+print("$$$Done With Arya_suit_0003")
 
